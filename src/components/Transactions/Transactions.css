@@ -1,0 +1,19 @@
+/* components/Transactions/Transactions.css */
+.transaction-form {
+    padding: 20px;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .transaction-list {
+    margin-top: 20px;
+  }
+  
+  .transaction-item {
+    transition: background-color 0.3s ease;
+  }
+  
+  .transaction-item:hover {
+    background-color: var(--background-secondary);
+  }

@@ -1,0 +1,32 @@
+/* components/Dashboard/Dashboard.css */
+.dashboard {
+    min-height: 100vh;
+  }
+  
+  .dashboard-header h1 {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .stats-card {
+    background: linear-gradient(145deg, var(--card-bg) 0%, var(--card-bg-dark) 100%);
+  }
+  
+  .chart-container {
+    height: 100%;
+  }
+  
+  .card {
+    height: 100%;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .stats-card {
+      margin-bottom: 1rem;
+    }
+    
+    .chart-container {
+      margin-bottom: 2rem;
+    }
+  }

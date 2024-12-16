@@ -1,0 +1,12 @@
+/* components/Charts/Charts.css */
+.expense-chart {
+    padding: 20px;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .chart-container {
+    position: relative;
+    height: 300px;
+  }

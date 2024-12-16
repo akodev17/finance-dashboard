@@ -1,0 +1,416 @@
+/* styles/theme.css */
+:root {
+  /* Modern Color Palette */
+  --primary-color: #4361ee;
+  --primary-color-dark: #3046b1;
+  --secondary-color: #4f46e5;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --info-color: #3b82f6;
+  
+  /* Light theme */
+  --bg-light: #f8fafc;
+  --card-bg-light: #ffffff;
+  --text-primary-light: #1e293b;
+  --text-secondary-light: #64748b;
+  --border-color-light: #e2e8f0;
+  --input-bg-light: #ffffff;
+  --sidebar-bg-light: #ffffff;
+  --result-bg-light: #f1f5f9;
+  
+  /* Dark theme */
+  --bg-dark: #0f172a;
+  --card-bg-dark: #1e293b;
+  --text-primary-dark: #f1f5f9;
+  --text-secondary-dark: #94a3b8;
+  --border-color-dark: #334155;
+  --input-bg-dark: #1e293b;
+  --sidebar-bg-dark: #1e293b;
+  --result-bg-dark: #334155;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Global Styles */
+body {
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+body[data-theme='light'] {
+  background-color: var(--bg-light);
+  color: var(--text-primary-light);
+}
+
+body[data-theme='dark'] {
+  background-color: var(--bg-dark);
+  color: var(--text-primary-dark);
+}
+
+/* Card Styles */
+.card {
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+body[data-theme='light'] .card {
+  background-color: var(--card-bg-light);
+  border-color: var(--border-color-light);
+}
+
+body[data-theme='dark'] .card {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-color-dark);
+}
+
+/* Stats Card */
+.stats-card {
+  padding: 1.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--card-bg) 0%, var(--card-bg-dark) 100%);
+}
+
+.stats-card h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.stats-card .value {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Form Controls */
+.form-control, .form-select {
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.form-control:focus, .form-select:focus {
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.25);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);
+}
+
+/* Tables */
+.table {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.table thead th {
+  background-color: rgba(67, 97, 238, 0.1);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* Charts */
+.chart-container {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--card-bg) 0%, var(--card-bg-dark) 100%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary-light);
+  transition: color 0.3s ease;
+}
+
+body[data-theme='dark'] h1,
+body[data-theme='dark'] h2,
+body[data-theme='dark'] h3,
+body[data-theme='dark'] h4,
+body[data-theme='dark'] h5,
+body[data-theme='dark'] h6 {
+  color: var(--text-primary-dark);
+}
+
+/* Card title specific styles */
+.card-title {
+  color: var(--text-primary-light);
+  transition: color 0.3s ease;
+}
+
+body[data-theme='dark'] .card-title {
+  color: var(--text-primary-dark);
+}
+
+/* Stats card specific styles */
+.stats-card h3 {
+  color: var(--text-secondary-light);
+  transition: color 0.3s ease;
+}
+
+body[data-theme='dark'] .stats-card h3 {
+  color: var(--text-secondary-dark);
+}
+
+/* Modal title specific styles */
+.modal-title {
+  color: var(--text-primary-light);
+  transition: color 0.3s ease;
+}
+
+body[data-theme='dark'] .modal-title {
+  color: var(--text-primary-dark);
+}
+
+/* Dark mode styles */
+body[data-theme='dark'] {
+  background-color: var(--bg-dark);
+  color: var(--text-primary-dark);
+}
+
+body[data-theme='dark'] .card {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-color-dark);
+}
+
+body[data-theme='dark'] .form-control,
+body[data-theme='dark'] .form-select {
+  background-color: var(--input-bg-dark);
+  border-color: var(--border-color-dark);
+  color: var(--text-primary-dark);
+}
+
+body[data-theme='dark'] .table {
+  color: var(--text-primary-dark);
+}
+
+body[data-theme='dark'] .table thead th {
+  background-color: var(--card-bg-dark);
+  color: var(--text-secondary-dark);
+}
+
+body[data-theme='dark'] .table td {
+  color: var(--text-primary-dark);
+}
+
+body[data-theme='dark'] .modal-content {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-color-dark);
+}
+
+body[data-theme='dark'] .modal-header {
+  border-bottom-color: var(--border-color-dark);
+}
+
+body[data-theme='dark'] .modal-footer {
+  border-top-color: var(--border-color-dark);
+}
+
+body[data-theme='dark'] .result {
+  background-color: var(--result-bg-dark);
+}
+
+body[data-theme='dark'] .current-rates {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-color-dark);
+}
+
+body[data-theme='dark'] .rate-item {
+  border-color: var(--border-color-dark);
+}
+
+body[data-theme='dark'] .form-label {
+  color: var(--text-primary-dark);
+}
+
+body[data-theme='dark'] .nav-link {
+  color: var(--text-secondary-dark);
+}
+
+body[data-theme='dark'] .nav-link:hover {
+  color: var(--text-primary-dark);
+}
+
+body[data-theme='dark'] .search-input input {
+  background-color: var(--input-bg-dark);
+  color: var(--text-primary-dark);
+}
+
+body[data-theme='dark'] .search-input input::placeholder {
+  color: var(--text-secondary-dark);
+}
+
+/* Chart styles for dark mode */
+body[data-theme='dark'] .chart-container {
+  background: linear-gradient(135deg, var(--card-bg-dark) 0%, var(--bg-dark) 100%);
+}
+
+/* Form control focus states */
+body[data-theme='dark'] .form-control:focus,
+body[data-theme='dark'] .form-select:focus {
+  background-color: var(--input-bg-dark);
+  border-color: var(--primary-color);
+  color: var(--text-primary-dark);
+}
+
+/* Button styles for dark mode */
+body[data-theme='dark'] .btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+body[data-theme='dark'] .btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+body[data-theme='dark'] .btn-outline-danger {
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+body[data-theme='dark'] .btn-outline-danger:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* Dark mode for fetched data and dynamic content */
+body[data-theme='dark'] .transaction-item {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-color-dark);
+}
+
+body[data-theme='dark'] .transaction-list {
+  color: var(--text-primary-dark);
+}
+
+body[data-theme='dark'] .table tbody tr {
+  background-color: var(--card-bg-dark);
+  color: var(--text-primary-dark);
+}
+
+body[data-theme='dark'] .table tbody tr:hover {
+  background-color: var(--bg-dark);
+}
+
+body[data-theme='dark'] .table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--bg-dark);
+}
+
+body[data-theme='dark'] .table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Chart tooltips and legends in dark mode */
+body[data-theme='dark'] .chartjs-tooltip {
+  background-color: var(--card-bg-dark);
+  color: var(--text-primary-dark);
+  border-color: var(--border-color-dark);
+}
+
+body[data-theme='dark'] .chartjs-legend {
+  color: var(--text-primary-dark);
+}
+
+/* Currency converter results in dark mode */
+body[data-theme='dark'] .rate-item .value {
+  color: var(--primary-color);
+}
+
+body[data-theme='dark'] .current-rates h5 {
+  color: var(--text-primary-dark);
+}
+
+/* Transaction amounts in dark mode */
+body[data-theme='dark'] .text-success {
+  color: #34d399 !important;
+}
+
+body[data-theme='dark'] .text-danger {
+  color: #f87171 !important;
+}
+
+/* Form placeholders in dark mode */
+body[data-theme='dark'] input::placeholder,
+body[data-theme='dark'] textarea::placeholder {
+  color: var(--text-secondary-dark);
+}
+
+/* Table borders in dark mode */
+body[data-theme='dark'] .table-bordered {
+  border-color: var(--border-color-dark);
+}
+
+body[data-theme='dark'] .table-bordered td,
+body[data-theme='dark'] .table-bordered th {
+  border-color: var(--border-color-dark);
+}
+
+/* Dropdown menus in dark mode */
+body[data-theme='dark'] .dropdown-menu {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-color-dark);
+}
+
+body[data-theme='dark'] .dropdown-item {
+  color: var(--text-primary-dark);
+}
+
+body[data-theme='dark'] .dropdown-item:hover {
+  background-color: var(--bg-dark);
+}
+
+/* Modal close button in dark mode */
+body[data-theme='dark'] .modal .close {
+  color: var(--text-primary-dark);
+}
+
+/* Chart axes and grid lines */
+body[data-theme='dark'] .chartjs-render-monitor {
+  filter: brightness(0.8);
+}
+
+body[data-theme='dark'] canvas {
+  filter: brightness(0.8);
+}

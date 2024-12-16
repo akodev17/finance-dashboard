@@ -1,0 +1,5 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="20" fill="#F8F9FA"/>
+  <path d="M100 80C86.2 80 75 91.2 75 105C75 118.8 86.2 130 100 130C113.8 130 125 118.8 125 105C125 91.2 113.8 80 100 80ZM100 120C91.7 120 85 113.3 85 105C85 96.7 91.7 90 100 90C108.3 90 115 96.7 115 105C115 113.3 108.3 120 100 120Z" fill="#6C757D"/>
+  <text x="100" y="160" text-anchor="middle" fill="#6C757D" font-size="14">No data available</text>
+</svg>
