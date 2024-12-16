@@ -1,4 +1,4 @@
-Host Link: https://finance-dashboard-akodev.vercel.app/
+Host Link: https://finance-dashboard-akodev.netlify.app/
 
 ```markdown:README.md
 # Finance Dashboard
